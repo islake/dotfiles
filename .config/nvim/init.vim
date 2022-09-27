@@ -1,0 +1,12 @@
+noremap n j
+noremap e k
+noremap i l
+noremap j e
+noremap k n
+noremap l i
+noremap N J
+noremap E K
+noremap I L
+noremap J E
+noremap K N
+noremap L I

@@ -49,7 +49,9 @@ alias t='python ~/programs/t/t.py --task-dir ~/programs/t/tasks --list tasks'
 
 alias focus='~/scripts/switch_polybar.sh &'
 
-alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+dtf () {
+  git --git-dir="$HOME/.dotfiles" --work-tree="$HOME" "$@"
+}
 
 eval "chpwd() exa"
 
