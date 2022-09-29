@@ -19,6 +19,7 @@ alias unidir='cd ~/Documents/shared/uni/yr2'
 alias dropdown='tmuxinator start dropdown'
 alias wttr="curl \"wttr.in/bristol?0npQ\""
 alias mounthome="sudo mount -t cifs -o user=dietpi //cosypi/ULTIMA /mnt/ULTIMA"
+alias mountubuntu="sudo mount /dev/nvme0n1p7 /mnt/ubuntu"
 
 ttv() {
   eval "streamlink twitch.tv/$1 ${2:-480p} &"
@@ -37,6 +38,7 @@ remind() {
   eval "echo \"nmcli [con up NAME]\""
   eval "echo \"ls -lsnew\""
   eval "echo \"zathura\""
+  eval "echo \"$VM_IP\""
 }
 
 alias ls='exa'
@@ -55,7 +57,13 @@ dtf () {
 
 eval "chpwd() exa"
 
+alias conservation_on="echo 1 | sudo tee /sys/bus/platform/drivers/ideapad_acpi/VPC2004:00/conservation_mode"
+alias conservation_off="echo 0 | sudo tee /sys/bus/platform/drivers/ideapad_acpi/VPC2004:00/conservation_mode"
+alias conservation_status="cat /sys/bus/platform/drivers/ideapad_acpi/VPC2004:00/conservation_mode"
+
 # eval "$(zoxide init zsh)"
 source ~/powerlevel10k/powerlevel10k.zsh-theme
+
+VM_IP='192.168.23.128'
 
 setopt autocd
