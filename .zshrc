@@ -16,6 +16,7 @@ plugins=(git)
 
 source $HOME/.alias
 source $HOME/.env-var
+source $HOME/.machine-specific
 
 eval "chpwd() exa"
 # eval "$(zoxide init zsh)"

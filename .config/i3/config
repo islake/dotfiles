@@ -171,40 +171,13 @@ mode "resize" {
 # enable tap to click
 exec "xinput set-prop \"SYNA3255:00 06CB:7F27 Touchpad\" \"libinput Tapping Enabled\" 1"
 
-# dracula theme
-
-# # class                 border  bground text    indicator child_border
-# client.focused          #6272A4 #6272A4 #F8F8F2 #0088DD   #0088DD
-# client.focused_inactive #44475A #44475A #F8F8F2 #44475A   #44475A
-# client.unfocused        #282A36 #282A36 #BFBFBF #282A36   #282A36
-# client.urgent           #44475A #FF5555 #F8F8F2 #FF5555   #FF5555
-# client.placeholder      #282A36 #282A36 #F8F8F2 #282A36   #282A36
-# client.background       #F8F8F2
-
 # gruvbox-material
 # class                 border  backgr  text    indicator child_border
 client.focused          #a9b665 #a9b665 #32302f #a9b665   #a9b665
 client.unfocused        #32302f #32302f #dfbf8e #32302f   #32302f
 client.focused_inactive #32302f #32302f #dfbf8e #32302f   #32302f
 
-# bar {
-#   colors {
-#     background #282A36
-#     statusline #F8F8F2
-#     separator  #44475A
-
-#     focused_workspace  #44475A #44475A #F8F8F2
-#     active_workspace   #282A36 #44475A #F8F8F2
-#     inactive_workspace #282A36 #282A36 #BFBFBF
-#     urgent_workspace   #FF5555 #FF5555 #F8F8F2
-#     binding_mode       #FF5555 #FF5555 #F8F8F2
-#   }
-# }
-
 bindsym $mod+d exec "dmenu_run -nf '#F8F8F2' -nb '#282A36' -sb '#6272A4' -sf '#F8F8F2' -fn 'monospace-10' -p 'dmenu%'"
-
-# old binding for dropdown (use super+grave for grave)
-#bindsym grave exec --no-startup-id tilix --quake
 
 # hide titlebars
 for_window [class="^.*"] border pixel 2
@@ -257,7 +230,8 @@ hide_edge_borders smart_no_gaps
 # to fix: must restart i3 if exit terminal
 exec_always --no-startup-id alacritty --class dropdown2 --config-file ~/.config/alacritty/alacritty-dropdown.yml &
 bindsym grave [instance="dropdown2"] scratchpad show, move position 0 0
-for_window [instance="dropdown2"] floating enable, resize set 1920 540, move scratchpad
+for_window [instance="dropdown2"] floating enable, resize set 100 ppt 50 ppt, move scratchpad
+# for_window [instance="dropdown2"] floating enable, resize set 1920 540, move scratchpad
 
 # i3dropdown implementation - find fix for returning focus to child
 # exec --no-startup-id i3 --get-socketpath > /tmp/i3wm-socket-path
