@@ -254,12 +254,13 @@ hide_edge_borders smart_no_gaps
 ##################
 
 # dropdown terminal (use super+grave for grave)
-# exec_always --no-startup-id alacritty --class dropdown2 &
-# bindsym grave [instance="dropdown2"] scratchpad show, move position 0 0
-# for_window [instance="dropdown2"] floating enable, resize set 1920 540, move scratchpad
-exec --no-startup-id i3 --get-socketpath > /tmp/i3wm-socket-path
+# to fix: must restart i3 if exit terminal
+exec_always --no-startup-id alacritty --class dropdown2 --config-file ~/.config/alacritty/alacritty-dropdown.yml &
+bindsym grave [instance="dropdown2"] scratchpad show, move position 0 0
+for_window [instance="dropdown2"] floating enable, resize set 1920 540, move scratchpad
 
-floating_maximum_size 1920 x 540
-
-for_window [instance="dropdown2"] floating enable, resize set 1920 540, move position 0 0;
-bindsym grave exec --no-startup-id i3dropdown dropdown2 "alacritty --class dropdown2 --config-file ~/.config/alacritty/alacritty-dropdown.yml"; focus parent
+# i3dropdown implementation - find fix for returning focus to child
+# exec --no-startup-id i3 --get-socketpath > /tmp/i3wm-socket-path
+# floating_maximum_size 1920 x 540
+# for_window [instance="dropdown2"] floating enable, resize set 1920 540, move position 0 0;
+# bindsym grave exec --no-startup-id i3dropdown dropdown2 "alacritty --class dropdown2 --config-file ~/.config/alacritty/alacritty-dropdown.yml"; focus parent
