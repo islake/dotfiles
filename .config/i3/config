@@ -238,3 +238,5 @@ for_window [instance="dropdown2"] floating enable, resize set 100 ppt 50 ppt, mo
 # floating_maximum_size 1920 x 540
 # for_window [instance="dropdown2"] floating enable, resize set 1920 540, move position 0 0;
 # bindsym grave exec --no-startup-id i3dropdown dropdown2 "alacritty --class dropdown2 --config-file ~/.config/alacritty/alacritty-dropdown.yml"; focus parent
+
+exec_always --no-startup-id picom &
