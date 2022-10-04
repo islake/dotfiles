@@ -169,6 +169,10 @@ bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 5%- down # 
 # remap altgr to esc
 exec --no-startup-id /usr/bin/xmodmap "$HOME/.config/altgr-rebind.Xmodmap"
 
+# kill applets (TODO disable from starting in the first place)
+exec_always --no-startup-id killall nm-applet
+exec_always --no-startup-id killall blueman-applet
+
 # polybar
 exec_always --no-startup-id ~/.config/polybar/launch.sh &
 
@@ -214,6 +218,3 @@ bindsym grave [instance="dropdown2"] scratchpad show, move position 0 0
 for_window [instance="dropdown2"] floating enable, resize set 100 ppt 50 ppt, move scratchpad
 
 # exec_always --no-startup-id picom &
-
-exec_always --no-startup-id killall nm-applet
-exec_always --no-startup-id killall blueman-applet
