@@ -55,6 +55,8 @@ remind() {
   eval "echo \"ls -lsnew\""
   eval "echo \"zathura\""
   eval "echo \"$VM_IP\""
+  eval "echo \"shiori   bookmarks\""
+  eval "echo \"ncdu     diskspace\""
 }
 
 # critical system function
