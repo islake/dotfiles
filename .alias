@@ -43,7 +43,7 @@ ttv() {
 # reminder
 remind() {
   eval "echo \"fflo\""
-  eval "echo \"mocp     music\""
+  eval "echo \"stmp     music\""
   eval "echo \"unidir\""
   eval "echo \"dropdown\""
   eval "echo \"mc\""
@@ -54,9 +54,10 @@ remind() {
   eval "echo \"nmcli [con up NAME]\""
   eval "echo \"ls -lsnew\""
   eval "echo \"zathura\""
-  eval "echo \"$VM_IP\""
+  eval "echo \"$VM_IP - dev:uweos\""
   eval "echo \"shiori   bookmarks\""
   eval "echo \"ncdu     diskspace\""
+  eval "echo \"switch_ext / switch_int  change monitor\""
 }
 
 # critical system function

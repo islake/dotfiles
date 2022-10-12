@@ -49,8 +49,10 @@ windows:
       # Synchronize all panes of this window, can be enabled before or after the pane commands run.
       # 'before' represents legacy functionality and will be deprecated in a future release, in favour of 'after'
       # synchronize: after
-      layout: even-horizontal
+      layout: 68de,212x28,0,0{104x28,0,0,0,107x28,105,0[107x14,105,0,1,107x13,105,15,2]}
+      # layout: even-horizontal
       panes:
         - clear;capy
         - clear;wttr
+        - clear 
       #layout: 77a6,213x34,0,0{132x34,0,0,0,80x34,133,0,1}
