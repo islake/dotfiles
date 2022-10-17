@@ -153,7 +153,8 @@ exec --no-startup-id "xinput set-prop \"SYNA3255:00 06CB:7F27 Touchpad\" \"libin
 
 # gruvbox-material
 # class                 border  backgr  text    indicator child_border
-client.focused          #a9b665 #a9b665 #32302f #a9b665   #a9b665
+client.focused          #697625 #697625 #32302f #697624   #697625
+# client.focused          #a9b665 #a9b665 #32302f #a9b665   #a9b665
 client.unfocused        #32302f #32302f #dfbf8e #32302f   #32302f
 client.focused_inactive #32302f #32302f #dfbf8e #32302f   #32302f
 
@@ -174,7 +175,7 @@ exec_always --no-startup-id killall nm-applet
 exec_always --no-startup-id killall blueman-applet
 
 # polybar
-exec_always --no-startup-id ~/.config/polybar/launch.sh &
+exec_always --no-startup-id ~/.config/polybar/theme/launch.sh &
 
 
 # screenshots
@@ -197,13 +198,14 @@ bindsym Ctrl+Shift+Print exec --no-startup-id /home/slake/.scripts/ocr-clip.sh
 ##################
 # i3-gaps specific
 gaps inner 7
-gaps outer 7
+gaps outer 3
+gaps top 36
 
 # Only enable gaps on a workspace when there is at least one container
-smart_gaps on
+# smart_gaps on
 
 # Only enable outer gaps when there is exactly one container
-smart_gaps inverse_outer
+# smart_gaps inverse_outer
 
 # Activate smart borders (always)
 smart_borders on
@@ -215,7 +217,7 @@ hide_edge_borders smart_no_gaps
 # 'dropdown' terminal (use super+grave for grave)
 # to fix: must restart i3 if exit terminal
 exec_always --no-startup-id alacritty --class dropdown2 --config-file ~/.config/alacritty/alacritty-dropdown.yml &
-bindsym grave [instance="dropdown2"] scratchpad show, move position 0 0
+bindsym Ctrl+grave [instance="dropdown2"] scratchpad show, move position 0 540
 for_window [instance="dropdown2"] floating enable, resize set 100 ppt 50 ppt, move scratchpad
 
 # wallpaper TODO: improve modularity
